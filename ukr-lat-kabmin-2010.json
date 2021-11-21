@@ -3,6 +3,8 @@
     "name": "Паспортна транслітерація (КМУ 2010)",
     "desc": "Офіційна транслітерація, затверджена Кабміном у 2010-му році.",
     "link": "https://zakon.rada.gov.ua/laws/show/55-2010-%D0%BF#Text",
+    "from": "ukr",
+    "to": "lat",
 
     "useLocationInWordAlgo": true,
 
@@ -49,13 +51,11 @@
         "л": "l",
         "м": "m",
         "н": "n",
-        "р": "r",
+        "р": "r"
+    },
 
-        "ў": "ў",
-        "ё": "ё",
-        "э": "э",
-        "ы": "ы",
-        "ъ": "ъ"
+    "apostrophesSingleKeyDict": {
+        "'`‘’": ""
     },
 
     "finalFixDict": {
