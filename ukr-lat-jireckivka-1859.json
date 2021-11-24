@@ -3,6 +3,7 @@
     "name": "Їречківка (1859)",
     "desc": "Проєкт латинської абетки для української (руської) мови, укладений Йосифом Їречеком на основі чеського правопису. «Пропозиція» Їречека опублікована 1859 року. Спрощена версія, без діялектичних ě, ü, ł, eu та ou.",
     "link": "http://latynka.tak.today/works/proekt-jirecheka/",
+    "source-link": "https://books.google.com.ua/books?hl=uk&id=KU1dAAAAcAAJ&q=ll#v=onepage&q&f=false",
     "from": "ukr",
     "to": "lat",
 
@@ -96,6 +97,14 @@
     "unsoftableConsonants": [ "б", "в", "г", "ґ", "ж", "к", "м", "п", "ф", "х", "ч", "ш" ],
 
     "afterFinishDict": {
-        "undefined": ""
+        "undefined": "",
+        "dď": "ďď",
+        "zź": "źź",
+        "lľ": "ľľ",
+        "nń": "ńń",
+        "rŕ": "ŕŕ",
+        "sś": "śś",
+        "tť": "ťť",
+        "cć": "ćć"
     }
 }
