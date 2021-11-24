@@ -8,7 +8,7 @@
 
     "useLocationInWordAlgo": true,
 
-    "beforeFixDict": {
+    "beforeStartDict": {
         "зг": "zgh"
     },
 
@@ -58,7 +58,7 @@
         "": ""
     },
 
-    "finalFixDict": {
+    "afterFinishDict": {
         "undefined": ""
     }
 }
