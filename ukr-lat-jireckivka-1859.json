@@ -94,10 +94,9 @@
         "ц": "ć"
     },    
 
-    "unsoftableConsonants": [ "б", "в", "г", "ґ", "ж", "к", "м", "п", "ф", "х", "ч", "ш" ],
+    "unsoftableConsonants": [ "б", "в", "г", "ґ", "ж", "к", "м", "п", "ф", "х", "ч", "ш", "щ" ],
 
     "afterFinishDict": {
-        "undefined": "",
         "dď": "ďď",
         "zź": "źź",
         "lľ": "ľľ",
@@ -106,5 +105,7 @@
         "sś": "śś",
         "tť": "ťť",
         "cć": "ćć"
-    }
+    },
+
+    "substitutionForUndefinedResult" : ""
 }

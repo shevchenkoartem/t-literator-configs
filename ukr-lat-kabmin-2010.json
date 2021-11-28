@@ -58,7 +58,5 @@
         "'`‘’": ""
     },
 
-    "afterFinishDict": {
-        "undefined": ""
-    }
+    "substitutionForUndefinedResult" : ""
 }
