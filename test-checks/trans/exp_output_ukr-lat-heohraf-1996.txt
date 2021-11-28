@@ -1,6 +1,6 @@
 Ukraina, Kyiv, L'viv, Kharkiv, ukrains'ka hryvnia, Taras Shevchenko, Lesia Ukrainka, Dynamo, Shakhtar
 valianok, Sviatoslav, tryvial'nyi, m'iaso, bur'ian, mavpiachyi, Ўil'iam, kal'ian, odynokaia, Kas'ianenko, syniaia
-yohurt, vs'oho, L'OKHA, d'ohot', Len'o, s'omyi, t'okhkaty, bul'ion, Vorobiov, boiovyi, nyzhnii, KYI, YODL', Yodl', lin'ky, myt', Kolomyia, Yndyk
+yohurt, vs'oho, L'OKHA, d'ohot', Len'o, s'omyi, t'okhkaty, bul'ion, Vorobiov, boiovyi, nyzhnii, KYI, YODL', Yodl', lin'ky, myt', ' ' (m'iakyi znak), Kolomyia, Yndyk
 hovoryty, uzghodzhennia, transhender, Galagan, Hemingўei, pohoidaty, Zakhidfest, Hromads'ke
 schoroku, borsch, Schur, Shekspir, SCHUR, SHUM, NYSCHYT'SIA, BORSCH, BIL'SHOSHTAN', chipliaieshsia
 Yuliia, komp'iuter, N'iu-York, poliuvannia
@@ -15,7 +15,7 @@ aBabAHalAMAhA
 Alushta, Andrii, Borschahivka, Borysenko, Vinnytsia, Volodymyr, Hadiach, Bohdan, Zghurs'kyi, Galagan, Gorgany, Donets'k, Dmytro, Rivne, Oleh, Esman', Yenakiieve, Haievych, Korop'ie, Zhytomyr, Zhanna, Zhezheliv, Zakarpattia, Kazymyrchuk, Medvyn, Mykhailenko, Ivankiv, Ivaschenko, Yizhakevych, Kadyivka, Mar'ine, Yosypivka, Stryi, Oleksii, Kyiv, Kovalenko, Lebedyn, Leonid, Mykolaiv, Marynych, Nizhyn, Nataliia, Odesa, Onyschenko, Poltava, Petro, Reshetylivka, Rybchyns'kyi, Sumy, Solomiia, Ternopil', Trots', Uzhhorod, Uliana, Fastiv, Filipchuk, Kharkiv, Khrystyna, Bila Tserkva, Stetsenko, Chernivtsi, Shevchenko, Shostka, Kyshen'ky, Scherbukhy, Hoscha, Haraschenko, Yurii, Koriukivka, Yahotyn, Yaroshenko, Kostiantyn, Znam'ianka, Feodosiia, Rus'
 
 klыk, mёd, эto, obъezd, zaўtra
-ikh', chesh'ch', zhep', ziab'
+ikh', chesh'ch', zhep', ziab', mosch'
 
 hei khloptsi ne vspiiu na ganku vasha faina yizha znyschuiet'sia burunduchkom
 KHVATS'KYI YUSHKOVAR FILIP SCHODNIA NA GANKU HOTUIE SIM'I VECHERIU Z ZHAB
