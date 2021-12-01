@@ -1,0 +1,100 @@
+{
+    "code": "ukr-lat-lucukivka-2000",
+    "name": "Лучуківка (2000)",
+    "desc": "Проєкт українського латинського правопису Івана Лучука, що вийшов у 2000-му році («Ukrajinśka latynka. Korotkyj pravopys»). За основу абетки взято «їречківку», але замість ch в «лучуківці» вживається x. Правопис Лучука використовується часописом «Ї»",
+    "link": "https://zaxid.net/ukrayinska_latinka_n1429706",
+    "source-link": "https://drive.google.com/file/d/1ucN7HVuVUFUJHZ8H1iymu8hSb35zzYgm/view",
+    "from": "ukr",
+    "to": "lat",
+
+    "affectVowelNotConsonantWhenSofting": false,
+
+    "beforeStartDict": {
+    },
+
+    "dict": {
+        "и": "y",
+        "і": "i",
+        
+        "й": "j",
+
+        "я": "ja",
+        "є": "je",
+        "ї": "ji",
+        "ю": "ju",
+        
+        "ґ": "g",
+        "г": "h",
+        "х": "x",
+        "ц": "c",
+        "щ": "šč",
+ 
+        "ж": "ž",     
+        "ш": "š",
+        "ч": "č",
+        
+        "а": "a",
+        "е": "e",
+        "о": "o",
+        "у": "u",
+        
+        "б": "b",
+        "п": "p",
+        "д": "d",
+        "т": "t",
+        "к": "k",
+        "в": "v",
+        "ф": "f",
+        "з": "z",
+        "с": "s",
+        "л": "l",
+        "м": "m",
+        "н": "n",
+        "р": "r"
+    },
+
+    "apostrophesSingleKeyDict": {
+        "'`‘’": ""
+    },
+
+    "softingSignsMultiDict": {
+        "ь": {
+            "affecting": "",
+            "affected": ""
+        }
+    },
+
+    "softingVowelsMultiDict": {
+        "є": {
+            "affecting": "e",
+            "affected": "je"
+        },
+        "ю": {
+            "affecting": "u",
+            "affected": "ju"
+        },
+        "я": {
+            "affecting": "a",
+            "affected": "ja"
+        },
+        "ьо": {
+            "affecting": "o",
+            "affected": "jo"
+        }
+    },
+
+    "softableConsonantsDict": {
+        "д": "ď",
+        "з": "ź",
+        "л": "ľ",
+        "н": "ń",
+        "р": "ŕ",
+        "с": "ś",
+        "т": "ť",
+        "ц": "ć"
+    },    
+
+    "unsoftableConsonants": [ "б", "в", "г", "ґ", "ж", "к", "м", "п", "ф", "х", "ч", "ш", "щ" ],
+
+    "substitutionForUndefinedResult" : ""
+}
