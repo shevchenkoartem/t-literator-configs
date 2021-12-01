@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  join-configs-into-single-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repo content
+        uses: actions/checkout@v2
+
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0' # install the python version needed
+
+      - name: Execute join-configs-into-single-file.py script
+        run: python ./deploy/scripts/join-configs-into-single-file.py ./
+      
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: GitHub Actions
+          author_email: action@github.com
+          message: "[bot] Deploy all configs in a single file"
