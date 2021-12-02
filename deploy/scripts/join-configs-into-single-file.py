@@ -30,7 +30,7 @@ if len(sys.argv) > 1 and len(sys.argv[1]) > 0:
 print(f'\tThe [configs] folder is "{configs_path}"')
 
 config_src_path = os.path.join(configs_path, 'src')
-config_deploy_path = os.path.join(configs_path, 'deploy')
+config_deploy_path = os.path.join(configs_path, 'deploy', 'result')
 
 # Get all file names in 'src' folder
 print(f'\tGetting files in "{config_src_path}"...')
@@ -48,8 +48,8 @@ for conf_filename in conf_filenames:
     (code, json_minified_str) = get_minified_json_str(json_str)
     json_minified_configs.append(f'"{code}": {json_minified_str}')
 
-res_filename = 't-literator-configs.json'
-res_prev_filename = 't-literator-configs.prev'
+res_filename = 't-literator-configs.js'
+res_prev_filename = 't-literator-configs.back'
 res_filepath = os.path.join(config_deploy_path, res_filename)
 res_prev_filepath = os.path.join(config_deploy_path, res_prev_filename)
 
@@ -62,8 +62,8 @@ if os.path.exists(res_filepath):
 
 print(f'\tCreating a new {res_filename} file...')
 res_file = open(res_filepath, "a+", 1)
-res_file.write('{\n')
+res_file.write('const T_LITERATOR_CONFIGS = {\n')
 res_file.write(',\n'.join(json_minified_configs))
-res_file.write('\n}')
+res_file.write('\n};')
 
 print(f'\t=====\n\tThe script is completed successfully!')
