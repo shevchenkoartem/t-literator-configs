@@ -32,4 +32,4 @@ jobs:
         with:
           author_name: GitHub Actions
           author_email: action@github.com
-          message: "[bot] Deploy all configs in a single file"
+          message: "[bot] Deploy configs in a single file after '${{ github.event.head_commit.message }}'"
