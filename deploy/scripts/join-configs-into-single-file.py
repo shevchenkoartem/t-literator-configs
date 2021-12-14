@@ -1,15 +1,16 @@
+from operator import itemgetter
+from os import walk
+import os
+import random
+import re
+import sys
+import json
 print(f'join-configs-into-single-file.py script execution:')
 
-import json
-import sys
-import re
-import random
-import os
-from os import walk
-from operator import itemgetter
 
 def parse_json(json_str):
-    find_comments = re.compile(r'\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$', re.MULTILINE)
+    find_comments = re.compile(
+        r'\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$', re.MULTILINE)
     find_wrong_spaces = re.compile(r'[\u202F\u00A0]')
 
     # Replacing comments and non-breaking spaces:
@@ -18,6 +19,7 @@ def parse_json(json_str):
 
     json_obj = json.loads(valid_json_str)
     return json_obj
+
 
 def get_file_fullnames(root_path, filetype):
     res = []
@@ -30,6 +32,7 @@ def get_file_fullnames(root_path, filetype):
                 res.append(os.path.join(level_root, f))
     return res
 
+
 def get_config_jsons(conf_file_fullnames):
     res = []
     for conf_fullname in conf_file_fullnames:
@@ -37,13 +40,18 @@ def get_config_jsons(conf_file_fullnames):
         print(f'\tMinifying {conf_fullname}...')
         json_obj = parse_json(json_str)
 
+        sort_by_me = str(json_obj['year']) if json_obj['year'] is not None else ''
+        sort_by_me += json_obj['name'] if json_obj['name'] is not None else ''
+        sort_by_me += json_obj['code'] if json_obj['code'] is not None else ''
+        json_obj['sortByMe'] = sort_by_me
+
         not_essential = 'not-essential' in conf_fullname
-        json_obj["isEssential"] = not not_essential
+        json_obj['isEssential'] = not not_essential
         res.append(json_obj)
-    
-    res = sorted(res, key=itemgetter('name')) # 2) ...then sort by name
-    res = sorted(res, key=itemgetter('year')) # 1) Sort by year
+        
+    res = sorted(res, key=itemgetter('sortByMe'))
     return res
+
 
 # Path to 'configs' folder can be passed in the first script argument
 configs_path = './configs/'
@@ -63,8 +71,10 @@ config_jsons = get_config_jsons(conf_file_fullnames)
 
 json_minified_configs = []
 for conf_json in config_jsons:
-    json_minified_str = json.dumps(conf_json, separators=(',', ":"), ensure_ascii=False)
-    code = conf_json['code'] if 'code' in conf_json else 'config' + str(random.randint(1000, 9999))
+    json_minified_str = json.dumps(
+        conf_json, separators=(',', ":"), ensure_ascii=False)
+    code = conf_json['code'] if 'code' in conf_json else 'config' + \
+        str(random.randint(1000, 9999))
     json_minified_configs.append(f'"{code}": {json_minified_str}')
 
 res_filename = 't-literator-configs.js'
