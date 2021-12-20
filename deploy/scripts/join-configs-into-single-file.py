@@ -45,8 +45,13 @@ def get_config_jsons(conf_file_fullnames):
         sort_by_me += json_obj['code'] if json_obj['code'] is not None else ''
         json_obj['sortByMe'] = sort_by_me
 
-        not_essential = 'not-essential' in conf_fullname
-        json_obj['isEssential'] = not not_essential
+        is_unessential = 'not-essential' in conf_fullname
+        is_unconventional = 'unconventional' in conf_fullname
+        is_fun = 'fun' in conf_fullname
+        json_obj['isEssential'] = not (is_unessential or is_unconventional or is_fun)
+        json_obj['isUnconventional'] = is_unconventional
+        json_obj['isFun'] = is_fun
+        json_obj['isUnessential'] = is_unessential # TODO: get rid of naming mess (isEssential and isUnessential)
         res.append(json_obj)
         
     res = sorted(res, key=itemgetter('sortByMe'))
