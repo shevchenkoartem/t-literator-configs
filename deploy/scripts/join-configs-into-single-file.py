@@ -5,8 +5,6 @@ import random
 import re
 import sys
 import json
-print(f'join-configs-into-single-file.py script execution:')
-
 
 def parse_json(json_str):
     find_comments = re.compile(
@@ -45,25 +43,27 @@ def get_config_jsons(conf_file_fullnames):
         sort_by_me += json_obj['code'] if json_obj['code'] is not None else ''
         json_obj['sortByMe'] = sort_by_me
 
-        is_unessential = 'not-essential' in conf_fullname
+        is_minor = 'minor' in conf_fullname
         is_unconventional = 'unconventional' in conf_fullname
         is_fun = 'fun' in conf_fullname
-        json_obj['isEssential'] = not (is_unessential or is_unconventional or is_fun)
-        json_obj['isUnconventional'] = is_unconventional
-        json_obj['isFun'] = is_fun
-        json_obj['isUnessential'] = is_unessential # TODO: get rid of naming mess (isEssential and isUnessential)
+        json_obj['isEssential'] = not (is_minor or is_unconventional or is_fun)
+        json_obj['isNotEssential_Unconventional'] = is_unconventional
+        json_obj['isNotEssential_Fun'] = is_fun
+        json_obj['isNotEssential_Minor'] = is_minor
         res.append(json_obj)
         
     res = sorted(res, key=itemgetter('sortByMe'))
     return res
 
 
+print(f'join-configs-into-single-file.py script execution:')
+
 # Path to 'configs' folder can be passed in the first script argument
-configs_path = './configs/'
+configs_path = './'
 if len(sys.argv) > 1 and len(sys.argv[1]) > 0:
     configs_path = sys.argv[1]
 
-print(f'\tThe [configs] folder is "{configs_path}"')
+print(f'\tThe root [configs] folder is "{os.path.abspath(configs_path)}"')
 
 config_src_path = os.path.join(configs_path, 'src')
 config_deploy_path = os.path.join(configs_path, 'deploy', 'result')
@@ -82,7 +82,7 @@ for conf_json in config_jsons:
         str(random.randint(1000, 9999))
     json_minified_configs.append(f'"{code}": {json_minified_str}')
 
-res_filename = 't-literator-configs.js'
+res_filename = 't-literator-configs.json'
 res_prev_filename = 't-literator-configs.back'
 res_filepath = os.path.join(config_deploy_path, res_filename)
 res_prev_filepath = os.path.join(config_deploy_path, res_prev_filename)
@@ -96,7 +96,7 @@ if os.path.exists(res_filepath):
 
 print(f'\tCreating a new {res_filename} file...')
 res_file = open(res_filepath, "a+", 1)
-res_file.write('const T_LITERATOR_CONFIGS = {\n')
+res_file.write('{\n')
 res_file.write(',\n'.join(json_minified_configs))
 res_file.write('\n};')
 
