@@ -38,7 +38,7 @@ def get_config_jsons(conf_file_fullnames):
         print(f'\tMinifying {conf_fullname}...')
         json_obj = parse_json(json_str)
 
-        sort_by_me = str(json_obj['year']) if json_obj['year'] is not None else ''
+        sort_by_me = str(json_obj['year']) if 'year' in json_obj and json_obj['year'] is not None else ''
         sort_by_me += json_obj['name'] if json_obj['name'] is not None else ''
         sort_by_me += json_obj['code'] if json_obj['code'] is not None else ''
         json_obj['sortByMe'] = sort_by_me
