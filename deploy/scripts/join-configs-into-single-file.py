@@ -98,6 +98,6 @@ print(f'\tCreating a new {res_filename} file...')
 res_file = open(res_filepath, "a+", 1)
 res_file.write('{\n')
 res_file.write(',\n'.join(json_minified_configs))
-res_file.write('\n};')
+res_file.write('\n}')
 
 print(f'\t=====\n\tThe script is completed successfully!')
